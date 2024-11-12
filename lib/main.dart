@@ -19,7 +19,6 @@ class TaskApp extends StatelessWidget {
   }
 }
 
-// Classe para representar uma tarefa com título e descrição
 class Task {
   final String title;
   final String description;
@@ -34,7 +33,6 @@ class Task {
     };
   }
 
-  // Criar uma instância de Task a partir de um Map
   factory Task.fromMap(Map<String, dynamic> map) {
     return Task(
       title: map['title'],
@@ -92,7 +90,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
     await _saveTasks();
   }
 
-  // Navegar para a tela de adicionar tarefa
+
   void _navigateToAddTaskScreen() async {
     final result = await Navigator.push(
       context,
