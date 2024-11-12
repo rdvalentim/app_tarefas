@@ -7,6 +7,8 @@ void main() {
 }
 
 class TaskApp extends StatelessWidget {
+  const TaskApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -42,6 +44,8 @@ class Task {
 }
 
 class TaskListScreen extends StatefulWidget {
+  const TaskListScreen({super.key});
+
   @override
   _TaskListScreenState createState() => _TaskListScreenState();
 }
@@ -108,7 +112,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de Tarefas'),
+        title: const Text('Lista de Tarefas'),
       ),
       body: ListView.builder(
         itemCount: tasks.length,
@@ -118,7 +122,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
             title: Text(task.title),
             subtitle: Text(task.description),
             trailing: IconButton(
-              icon: Icon(Icons.delete),
+              icon: const Icon(Icons.delete),
               onPressed: () => _removeTask(index),
             ),
           );
@@ -126,13 +130,15 @@ class _TaskListScreenState extends State<TaskListScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _navigateToAddTaskScreen,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
 }
 
 class AddTaskScreen extends StatefulWidget {
+  const AddTaskScreen({super.key});
+
   @override
   _AddTaskScreenState createState() => _AddTaskScreenState();
 }
@@ -154,7 +160,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Adicionar Tarefa'),
+        title: const Text('Adicionar Tarefa'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -163,17 +169,17 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
           children: [
             TextField(
               controller: _titleController,
-              decoration: InputDecoration(labelText: 'Título da Tarefa'),
+              decoration: const InputDecoration(labelText: 'Título da Tarefa'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextField(
               controller: _descriptionController,
-              decoration: InputDecoration(labelText: 'Descrição da Tarefa'),
+              decoration: const InputDecoration(labelText: 'Descrição da Tarefa'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: _submitTask,
-              child: Text('Adicionar'),
+              child: const Text('Adicionar'),
             ),
           ],
         ),
